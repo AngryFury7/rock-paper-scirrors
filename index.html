@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>rock paper scirrors</title>
+
+<style>
+
+body
+{
+
+margin:0px 0px 0px 0px;
+height:100%;
+
+
+
+}
+
+#main_division
+{
+
+background-color:lightblue;
+display:flex;
+flex-direction:row;
+justify-content:center;
+height:10000px;
+width:100%;
+
+}
+
+#second_main_division
+{
+
+background-color:lightpink;
+width:50%;
+display:flex;
+flex-direction:column;
+align-items:center;
+min-width:200px;
+
+}
+
+#one,#two,#three
+{
+
+    background-color:black;
+ min-width:100px;
+   
+    color:white;
+    font-family:arial;
+    border:1px solid black;
+    border-radius :20px;
+    margin-top:20px;
+    margin-bottom:20px;
+   font-weight:bolder;
+    padding-top:5px;
+    padding-bottom:5px;
+    transition:padding-left 0.15s, padding-right 0.15s;
+  
+}
+
+
+#four,#five
+{
+
+    background-color:black;
+ min-width:150px;
+   
+    color:white;
+    font-family:arial;
+    border:1px solid black;
+    border-radius :20px;
+    margin-top:25px;
+    margin-bottom:20px;
+   font-weight:bolder;
+    padding-top:10px;
+    padding-bottom:10px;
+    transition:padding-left 0.15s, padding-right 0.15s;
+    box-shadow: 3px 4px 5px rgba(0,0,0,0.5);
+    
+  
+}
+
+
+#one:hover
+{
+    padding-left:50px;
+    padding-right:50px;
+    cursor:pointer;
+}
+
+
+#five:hover
+{
+    padding-left:50px;
+    padding-right:50px;
+    cursor:pointer;
+}
+#two:hover{
+
+    cursor:pointer;
+    padding-left:50px;
+padding-right:50px;
+
+}
+
+
+#three:hover
+{
+    cursor:pointer;
+    padding-left:50px;
+    padding-right:50px;
+}
+#four:hover
+{
+    cursor:pointer;
+    padding-left:50px;
+    padding-right:50px;
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+  
+
+<div id="main_division">
+   
+
+<div id="second_main_division">
+    
+    <p style="
+    font-family:arial;
+    font-weight:800px;
+    color:pink;
+    border:none;
+    border-radius:14px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:15px;
+    padding-left:15px;
+     background-color:rgb(37, 37, 218);
+
+    
+    ">welcome to RPS game </p>
+
+    <p style="
+    font-family:arial;
+    font-weight:800px;
+     background-color:rgb(37, 37, 218);
+    border:none;
+    color:pink;
+
+    
+    border-radius:14px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:15px;
+    padding-left:15px;
+    ">
+        Please choose one of the following 
+    </p>
+
+    <button id="one" 
+    onclick="
+mypick=1;    
+console.log(mypick);
+    "
+    > rock</button>
+
+    <br>
+
+    <button  id="two"
+    onclick="
+    mypick=2;    
+console.log(mypick);
+    "
+    > paper</button>
+
+    <br>
+
+
+    <button id="three"
+    onclick="
+    mypick=3;    
+console.log(mypick);
+    "
+    >scirrors</button>
+
+    <button id="five"
+
+    onclick="
+    if (computerpickednumber>=0 && computerpickednumber<1/3)
+{
+    console.log(`computer has picked stone : ${computerpickednumber}`);
+ computerpick = 10;
+    console.log(computerpick);
+   
+}
+else{
+
+if(computerpickednumber>1/3 && computerpickednumber<2/3){
+console.log(`computer has picked paper : ${computerpickednumber}`);
+ computerpick = 20;
+    console.log(computerpick);}
+   
+
+
+else{
+    console.log(`computer has picked scissors : ${computerpickednumber}`);
+ computerpick = 30;
+    console.log(computerpick);
+   
+
+}
+
+}
+    "
+    
+    
+    >
+
+        let computer pick one 
+
+    </button>
+
+    <button id="four"
+    onclick="
+    if(mypick<=1 && mypick>0 && computerpick<=10 && computerpick>0 )
+alert(`you picked -----> stone 
+computer picked -----> stone
+result : draw`);
+
+if(mypick<=1 && mypick>0 &&computerpick<=20 && computerpick>10)
+alert(`you picked -----> stone
+computer picked -----> paper
+result : lost`);
+
+if(mypick<=1 && mypick>0&& computerpick<=30 && computerpick>20 )
+
+alert(`you picked -----> stone 
+computer picked -----> scirrors
+result : won`);
+
+
+if(mypick<=2 && mypick>1&& computerpick<=10 && computerpick>0)
+alert(`you picked -----> paper
+computer picked -----> stone
+result : won`);
+
+if(mypick<=2 && mypick>1&& computerpick<=20 && computerpick>10)
+alert(`you picked -----> paper
+computer picked -----> paper
+result : draw`);
+
+if(mypick<=2 && mypick>1&& computerpick<=30 && computerpick>20)
+alert(`you picked -----> paper
+computer picked -----> scirrors
+result : lost`);
+
+if(mypick<=3 && mypick>2&& computerpick<=10 && computerpick>0)
+alert(`you picked -----> scirrors
+computer picked -----> stone
+result : loss`);
+
+if(mypick<=3 && mypick>2&& computerpick<=20 && computerpick>10)
+alert(`you picked -----> scirrors
+computer picked -----> paper
+result : won`);
+
+if(mypick<=3 && mypick>2&& computerpick<=30 && computerpick>20)
+alert(`you picked -----> scirrors
+computer picked -----> scirrors
+result : draw`);
+
+    "
+    >
+        check result
+    </button>
+
+
+</div>
+
+
+
+</div>
+
+<script>
+
+const computerpickednumber = Math.random();
+
+
+
+let mypick ;
+
+let computerpick;
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
