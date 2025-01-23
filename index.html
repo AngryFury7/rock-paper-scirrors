@@ -5,13 +5,13 @@
 <title>rock paper scirrors</title>
 
 <style>
-
+  
 body
 {
 
-margin:0px 0px 0px 0px;
-height:2500px;
+margin:0px 0px 1px 0px;
 
+height:1500px;
 
 
 }
@@ -23,7 +23,7 @@ background-color:lightblue;
 display:flex;
 flex-direction:row;
 justify-content:center;
-height:2500px;
+height:1500px;
 width:100%;
 
 }
@@ -49,7 +49,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 min-width:200px;
-height: 537px;
+height: 560px;
 
 
 }
@@ -114,9 +114,14 @@ border:3px solid black;
 border-radius:8px;
 transition:opacity 1s;
 opacity:0;
- pointer-events:none;
+pointer-events:none;
 
 
+
+}
+.info_RPS:hover
+{
+pointer-events:none;
 
 }
 
@@ -126,6 +131,7 @@ opacity:0;
 opacity:1;
 
 }
+
                 
 
 
@@ -142,6 +148,7 @@ font-weight:510;
 
 
 }
+
 
 
 
@@ -197,6 +204,9 @@ font-weight:510;
 }
 
 
+
+
+
 #one:hover
 {
     padding-left:50px;
@@ -227,6 +237,14 @@ padding-right:50px;
     padding-right:50px;
 }
 #four:hover
+{
+    cursor:pointer;
+    padding-left:50px;
+    padding-right:50px;
+    
+}
+
+#button_restart:hover
 {
     cursor:pointer;
     padding-left:50px;
@@ -356,62 +374,110 @@ padding-right:50px;
     
         <button id="four"
         onclick="
-        if(mypick<=1 && mypick>0 && computerpick<=10 && computerpick>0 )
-    alert(`you picked -----> stone 
+        if(mypick<=1 && mypick>0 && computerpick<=10 && computerpick>0 ){
+       
+         score.draw = score.draw+1;
+        alert(`you picked -----> stone 
     computer picked -----> stone
-    result : draw`);
+    result : draw
+ wins:${score.wins}  losses: ${score.losses}  draws: ${score.draw}`);
+
+  
+        }
+
+    
     //---------------------------------------------------------------------------------------------------------------
             else{
     
     if(mypick<=1 && mypick>0 &&computerpick<=20 && computerpick>10)
+    {
+      score.losses = score.losses+1;
     alert(`you picked -----> stone
     computer picked -----> paper
-    result : lost`);
+    result : lost
+    wins:${score.wins}  losses: ${score.losses}  draws: ${score.draw}`);
+    }
+    
+    
     
                 else{
     if(mypick<=1 && mypick>0&& computerpick<=30 && computerpick>20 )
     
+    {
+       score.wins = score.wins+1;
     alert(`you picked -----> stone 
     computer picked -----> scirrors
-    result : won`);
+    result : won
+ wins:${score.wins}  losses: ${score.losses}  draws: ${score.draw}`);
     
+    }
                     else{
                     
     if(mypick<=2 && mypick>1&& computerpick<=10 && computerpick>0)
+  {
+       score.wins = score.wins+1;
     alert(`you picked -----> paper
     computer picked -----> stone
-    result : won`);
-    
+    result : won
+  wins:${score.wins}  losses: ${score.losses}  draws: ${score.draw}`);
+      
+  }
                     else{
                     
     if(mypick<=2 && mypick>1&& computerpick<=20 && computerpick>10)
-    alert(`you picked -----> paper
+    {
+  score.draw = score.draw+1;
+
+        alert(`you picked -----> paper
     computer picked -----> paper
-    result : draw`);
+    result : draw
+  wins:${score.wins}  losses: ${score.losses}  draws: ${score.draw}`);
+    
+    }
+
     
                         else{
     if(mypick<=2 && mypick>1&& computerpick<=30 && computerpick>20)
+    {  score.losses = score.losses+1;
     alert(`you picked -----> paper
     computer picked -----> scirrors
-    result : lost`);
-    
+    result : lost
+ wins:${score.wins}  losses: ${score.losses}  draws: ${score.draw}`);
+    }
+  
     if(mypick<=3 && mypick>2&& computerpick<=10 && computerpick>0)
+    {
+    
+    score.losses = score.losses+1;
     alert(`you picked -----> scirrors
     computer picked -----> stone
-    result : loss`);
+    result : loss
+      wins:${score.wins}  losses: ${score.losses}  draws: ${score.draw}`)
+    }
     
                             else{
     if(mypick<=3 && mypick>2&& computerpick<=20 && computerpick>10)
+   {
+   score.wins = score.wins+1;
     alert(`you picked -----> scirrors
     computer picked -----> paper
-    result : won`);
+    result : won
+ wins:${score.wins}  losses: ${score.losses}  draws: ${score.draw}`);
+ 
+   }
+   
     
                                 else{
     
     if(mypick<=3 && mypick>2&& computerpick<=30 && computerpick>20)
-    alert(`you picked -----> scirrors
+    {
+      score.draw = score.draw+1;
+          alert(`you picked -----> scirrors
     computer picked -----> scirrors
-    result : draw`);
+    result : draw
+   wins:${score.wins}  losses: ${score.losses}  draws: ${score.draw}`);
+    }
+
     
                                     else{
     alert(`either you have not selected the stone/paper/scissor 
@@ -458,6 +524,8 @@ padding-right:50px;
         >
             check result
         </button>
+
+
     
       
     
@@ -514,6 +582,16 @@ let mypick ;
 
 let computerpick;
 
+const score = {
+
+    wins :0 ,
+    losses:0,
+    draw:0 
+
+
+
+};
+
 
 
 
@@ -533,6 +611,8 @@ let computerpick;
 
 
 </html>
+
+
 
 
 
